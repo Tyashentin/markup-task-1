@@ -42,15 +42,14 @@
             <p>В случае ускорения или замедления медиана, конечно, изменится. Но она не может
                 рассказать, сколько пользователей ускорилось, а сколько замедлилось.
             </p>
-            <p>
-                    <abbr>APDEX</abbr> – <dfn>метрика</dfn>, которая сразу говорит: хорошо или плохо. Метрика
+            <p>     <abbr>APDEX</abbr> – <dfn>метрика</dfn>, которая сразу говорит: хорошо или плохо. Метрика
                     работает очень просто. Мы выбираем временной интервал [0; t], такой, что если
                     время показа страницы попало в него, то пользователь счастлив. Берем еще один
                     интервал, (t; 4t] (в четыре раза больше первого), и считаем, что если страница
                     показана за это время, то пользователь в целом удовлетворен скоростью работы,
                     но уже не настолько счастлив. И применяем формулу:
             </p>
-           <p> (кол-во счастливых пользователей + кол-во удовлетворенных / 2) / (кол-во всех).
+            <p> (кол-во счастливых пользователей + кол-во удовлетворенных / 2) / (кол-во всех).
                 Получается значение от нуля до единицы, которое, видимо, лучше всего показывает,
                 хорошо или плохо работает почта.</p>                   
             <h4>Как мы измеряем</h4>
@@ -61,8 +60,7 @@
                     this.timings['look-ma-finish'] = Date.now();</code></p>          
             <p>C помощью Date.now() мы получаем текущее время. Все тайминги собираются и при
                     отправке рассчитываются. На этапах разница между “end” и “start” не считается,
-                    а все вычисления производятся в конце:
-                </p>
+                    а все вычисления производятся в конце:</p>
             <p><code>
                 var totalTime = this.timings['look-ma-finish'] - this.timings['look-ma-im-start'];
             </code></p>
@@ -76,7 +74,9 @@
             <ol>
                 <li>включаем gzip;</li>
                 <li>выставляем заголовки кэширования;</li>
-                <li>фризим <abbr title="Cascading Style Sheets">CSS</abbr>, <abbr title="Javascript">JS</abbr>, шаблоны и картинки;</li>
+                <li>фризим <abbr title="Cascading Style Sheets">CSS</abbr>,
+                    <abbr title="Javascript">JS</abbr>, шаблоны и картинки;
+                </li>
                 <li>используем <abbr title="Content Delivery Network">CDN</abbr>;</li>
             </ol>
             <p>Мы подумали: «А что если хранить где-то старую версию файлов, а при выходе новой
@@ -133,25 +133,26 @@
                     каждого объекта есть три свойства. k — названия ключа в localStorage для этого
                     ресурса. p — патч для ресурса, который сгенерировал vcdiff. s — чексумма для
                     ресурса актуальной версии, чтобы потом можно было проверить правильность
-                    наложения патча на клиенте. Чексумма вычисляется по  алгоритму Флетчера.</p>
-            
+                    наложения патча на клиенте. Чексумма вычисляется по  алгоритму Флетчера.</p>            
             <p><a href="https://ru.wikipedia.org/wiki/Алгоритм_Бройдена_—_Флетчера_—_Гольдфарба_—_Шанно">Алгоритм Бройдена — Флетчера — Гольдфарба — Шанно</a> (<abbr>BFGS</abbr>)
                     — итерационный метод численной оптимизации, предназначенный для
                     нахождения локального максимума/минимума нелинейного функционала
                     без ограничений.</p>
-            Дано &epsilon;, x<sub>0</sub><br>
-            Инициализировано H<sub>0</sub><br>
-            k = 0<br>
-            <strong>while</strong> ||&nabla;f <sub>k</sub>|| &gt; &epsilon;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;найти направление
-            p<sub>k</sub> = &minus;C <sub>k</sub>&nabla;f <sub>k</sub><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            вычислить x <sub>k</sub> = x <sub>k</sub> + &alpha;<sub>k</sub> p<sub>k</sub>удовлетворяет условиям ВОльфе<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;обозначить s<sub>k</sub> = x<sub>k+1</sub> - x<sub>k</sub>
-            &nbsp;&nbsp;&nbsp;&nbsp;и y<sub>k</sub> = &nabla;f<sub>k+1</sub> - &nabla;f<sub>k</sub><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Вычислить C<sub>k+1</sub><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;k = k+1<br>
-            <strong>end.</strong>
+            <div>
+                Дано &epsilon;, x<sub>0</sub><br>
+                Инициализировано H<sub>0</sub><br>
+                k = 0<br>
+                <strong>while</strong> ||&nabla;f <sub>k</sub>|| &gt; &epsilon;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;найти направление
+                p<sub>k</sub> = &minus;C <sub>k</sub>&nabla;f <sub>k</sub><br>
+                &nbsp;&nbsp;&nbsp;&nbsp; вычислить x <sub>k</sub> = x <sub>k</sub> + &alpha;<sub>k</sub> p<sub>k</sub>
+                удовлетворяет условиям ВОльфе<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;обозначить s<sub>k</sub> = x<sub>k+1</sub> - x<sub>k</sub>
+                &nbsp;&nbsp;&nbsp;&nbsp;и y<sub>k</sub> = &nabla;f<sub>k+1</sub> - &nabla;f<sub>k</sub><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Вычислить C<sub>k+1</sub><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;k = k+1<br>
+                <strong>end.</strong>
+            </div>
             <p>Почему именно алгоритм Флетчера, а не другие популярные алгоритмы вроде:
                     CRC16/32 - алгоритм нахождения контрольной суммы, предназначенный для проверки
                     целостности данных
@@ -183,16 +184,16 @@
                     <td>3 995</td>
                 </tr>
             </table>
-            <address>Автор: @doochik<br>
-                    С++ разработик<br>
-                    Электронная почта: (<a href="mailto:doochik@yandex-team.ru?">doochik@yandex-team.ru</a>)<br>
-                    Компания: Яндекс<br></address>  
+            <address>
+                Автор: @doochik<br>
+                С++ разработик<br>
+                Электронная почта: (<a href="mailto:doochik@yandex-team.ru?">doochik@yandex-team.ru</a>)<br>
+                Компания: Яндекс<br></address>
             <article>
                     <h3>Комментарии (3):</h3>                    
                     <section>
                         <h5>- Mogaika (<a href="mailto:mogaika@yandex-team.ru">mogaika@yandex-team.ru</a>)30 ноября 2014 в 17:05</h5>
-                        <p>А можете привести сравнение, на сколько быстрее грузится lite версия?</p>
-                    </section>
+                        <p>А можете привести сравнение, на сколько быстрее грузится lite версия?</p></section>
                     <section>
                         <h5>- JIguse (<a href="mailto:mrawesome@yandex.ru">mrawesome@yandex.ru</a>)29 ноября 2014 в 21:30</h5>
                         <p>Спасибо за статью, познавательно. Здорово, что Яндекс делится некоторыми подробностями о внутренней работе сервисов.</p>
