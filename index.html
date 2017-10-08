@@ -134,10 +134,10 @@
                     ресурса. p — патч для ресурса, который сгенерировал vcdiff. s — чексумма для
                     ресурса актуальной версии, чтобы потом можно было проверить правильность
                     наложения патча на клиенте. Чексумма вычисляется по  алгоритму Флетчера.</p>            
-            <p><a href="https://ru.wikipedia.org/wiki/Алгоритм_Бройдена_—_Флетчера_—_Гольдфарба_—_Шанно">Алгоритм Бройдена — Флетчера — Гольдфарба — Шанно</a> (<abbr>BFGS</abbr>)
+            <q>Алгоритм Бройдена — Флетчера — Гольдфарба — Шанно (<abbr>BFGS</abbr>)
                     — итерационный метод численной оптимизации, предназначенный для
                     нахождения локального максимума/минимума нелинейного функционала
-                    без ограничений.</p>
+                    без ограничений.</q><br>
             <div>
                 Дано &epsilon;, x<sub>0</sub><br>
                 Инициализировано H<sub>0</sub><br>
@@ -145,7 +145,8 @@
                 <strong>while</strong> ||&nabla;f <sub>k</sub>|| &gt; &epsilon;<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;найти направление
                 p<sub>k</sub> = &minus;C <sub>k</sub>&nabla;f <sub>k</sub><br>
-                &nbsp;&nbsp;&nbsp;&nbsp; вычислить x <sub>k</sub> = x <sub>k</sub> + &alpha;<sub>k</sub> p<sub>k</sub>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                вычислить x <sub>k</sub> = x <sub>k</sub> + &alpha;<sub>k</sub> p<sub>k</sub>
                 удовлетворяет условиям ВОльфе<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;обозначить s<sub>k</sub> = x<sub>k+1</sub> - x<sub>k</sub>
                 &nbsp;&nbsp;&nbsp;&nbsp;и y<sub>k</sub> = &nabla;f<sub>k+1</sub> - &nabla;f<sub>k</sub><br>
@@ -192,26 +193,36 @@
             <article>
                     <h3>Комментарии (3):</h3>                    
                     <section>
-                        <h5>- Mogaika (<a href="mailto:mogaika@yandex-team.ru">mogaika@yandex-team.ru</a>)30 ноября 2014 в 17:05</h5>
+                        <h5>- Mogaika (
+                        <a href="mailto:mogaika@yandex-team.ru">mogaika@yandex-team.ru</a>)
+                        30 ноября 2014 в 17:05</h5>
                         <p>А можете привести сравнение, на сколько быстрее грузится lite версия?</p></section>
                     <section>
-                        <h5>- JIguse (<a href="mailto:mrawesome@yandex.ru">mrawesome@yandex.ru</a>)29 ноября 2014 в 21:30</h5>
+                        <h5>- JIguse (
+                            <a href="mailto:mrawesome@yandex.ru">mrawesome@yandex.ru</a>)
+                            29 ноября 2014 в 21:30</h5>
                         <p>Спасибо за статью, познавательно. Здорово, что Яндекс делится некоторыми подробностями о внутренней работе сервисов.</p>
                     </section>
                     <section>
-                        <h5>- Brister (<a href="mailto:brist89@yandex-team.ru">brist89@yandex-team.ru</a>)24 ноября 2014 в 13:13</h5>
-                        <p><q>(кол-во счастливых пользователей + кол-во удовлетворенных / 2) / (кол-во всех).Получается значение от нуля до единицы, которое, видимо, лучше всего показывает,
+                        <h5>- Brister (
+                            <a href="mailto:brist89@yandex-team.ru">brist89@yandex-team.ru</a>)
+                            24 ноября 2014 в 13:13</h5>
+                        <p><q>(кол-во счастливых пользователей + кол-во удовлетворенных / 2) / (кол-во всех).
+                            Получается значение от нуля до единицы, которое, видимо, лучше всего показывает,
                             хорошо или плохо работает почта.
                         </q></p>
                         <p>наверное все-таки от 0.5 до 1</p>
                     </section>
                     <section>
-                        <h5>- alexeimois (<a href="mailto:test@yandex.ru">test@yandex.ru</a>)22 ноября 2014 в 17:35</h5>
+                        <h5>- alexeimois (
+                            <a href="mailto:test@yandex.ru">test@yandex.ru</a>)
+                            22 ноября 2014 в 17:35</h5>
                         <p>Мы измеряем скорость загрузки с помощью <a href="help.yandex.ru/metrika/reports/monitoring_timing.xml">Яндекс.Метрики: </a></p>
                     </section>
             </article>                           
         <footer>
-            <address>&copy; Яндекс, <a href="mailto:help@yandex.ru">help@yandex.ru</a>, Хохрякова, 10</address>
+            <address>&copy; Яндекс, <a href="mailto:help@yandex.ru">help@yandex.ru</a>
+            , Хохрякова, 10</address>
         </footer>
     </main>
 </body>
